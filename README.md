@@ -213,13 +213,83 @@ Promise.prototype.then = function (onFulfilled, onRejected) {
 #### iframe 通信
 
 1. postMessage
+
+ifame 监听事件
+
+iframe 监听并响应来源:
+
+```js
+window.addEventListener('message', (e) => {
+  e.source.postMessage('World!', '*');
+});
+```
+
+parent 向 iframe 发送事件并获取响应:
+
+```js
+window.addEventListener('message', (e) => {
+  console.log(e.data);
+});
+iframe.contentWindow.postMessage('Hello', '*');
+```
+
+```js
+// 监听
+window.addEventListener('message', (e) => {
+  e.source.postMessage('World!', '*');
+});
+```
+
 2. hash
+
+```js
+setInterval(() => {
+  const hash = iframe.contentWindow.location.hash;
+  console.log(hash);
+}, 1000);
+```
 
 #### Event Loop
 
-宏任务 -> 所有入列微任务 -> 视图渲染 -
-|
-⬆️-----------------------------
+宏任务 -> 所有入列微任务 -> 视图渲染 - 重复
+
+题目：
+
+```js
+console.log('script start');
+
+async function async1() {
+  await async2();
+  console.log('async1 end');
+}
+async function async2() {
+  console.log('async2 end');
+}
+async1();
+
+setTimeout(function () {
+  console.log('setTimeout');
+}, 0);
+
+new Promise((resolve) => {
+  console.log('Promise');
+  resolve();
+})
+  .then(function () {
+    console.log('promise1');
+  })
+  .then(function () {
+    console.log('promise2');
+  });
+
+console.log('script end');
+```
+
+答案：
+
+```
+script start => async2 end => Promise => script end => promise1 => promise2 => async1 end => setTimeout
+```
 
 ---
 
