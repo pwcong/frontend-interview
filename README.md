@@ -1,18 +1,19 @@
 # FrontEnd Interview
 Try to leave out of Landray &amp; make more money.
 
-### Questions
+## Questions
 
-#### Base
+### 1.Base
 
 
-#### JavaScript
-* 基本类型种类，有哪些
+### 2.JavaScript
+
+#### 基本类型种类，有哪些
 有两种数据类型，基本类型和引用类型。
 基本类型：string, number, boolean, undefined, null, symbol(es6)
 引用数据: object, array, function
 
-* typeof 是否能正确判断类型？instanceof 能正确判断对象的原理是什么？
+#### typeof 是否能正确判断类型？instanceof 能正确判断对象的原理是什么？
 ```js
 typeof 1 // 'number'
 typeof '1' // 'string'
@@ -29,7 +30,7 @@ typeof {} // 'object'
 typeof console.log // 'function'
 ```
 
-* let为什么能解决for循环闭包问题
+#### let为什么能解决for循环闭包问题
 
 闭包产生
 内部函数依赖了外部作用域变量，即内部持有外部引用不释放（延续了引用变量的生命周期，延寿）
@@ -55,10 +56,10 @@ for循环体内定义fn ，若函数体内用了for块var变量，在for语句�
 而块内用let变量，与之同级的函数体用了该let变量，之后调用函数，函数使用的是定义时块内的let变量值。
 关键是否使用同一值（或址）
 
-#### CSS
+### 3.CSS
 
 
-#### React
+### 4.React
 
 
-#### Git
+### 5.Git
