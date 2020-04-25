@@ -13,14 +13,14 @@ Try to leave out of Landray &amp; make more money.
 基本类型：string, number, boolean, undefined, null, symbol(es6)
 引用数据: object, array, function
 
-------
+******
 
 #### typeof 是否能正确判断类型？instanceof 能正确判断对象的原理是什么？
 对于基础类型来说，除了null都会正确显示类型
 对于引用类型来说，除了函数都会显示 object
 所以说 typeof 并**不能**准确判断变量到底是什么类型
 
-------
+******
 
 #### let为什么能解决for循环闭包问题
 
