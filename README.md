@@ -1,3 +1,3 @@
 # FrontEnd Interview
 
-Try to leave out of Landray &amp; make more money.
+记录前端知识和面试经验。
